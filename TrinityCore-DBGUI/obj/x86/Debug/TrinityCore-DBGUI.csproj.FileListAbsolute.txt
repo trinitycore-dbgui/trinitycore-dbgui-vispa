@@ -1,0 +1,16 @@
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI.exe
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI-ControlLib.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI-Library.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI-ControlLib.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\bin\Debug\TrinityCore-DBGUI-Library.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmConnect.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmGameItem.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmGameItemSearch.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmMain.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.Properties.Resources.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore-DBGUI.exe
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore-DBGUI.pdb

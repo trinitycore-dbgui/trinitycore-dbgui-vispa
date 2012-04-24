@@ -1,0 +1,5 @@
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-Library\bin\Debug\TrinityCore-DBGUI-Library.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-Library\bin\Debug\TrinityCore-DBGUI-Library.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-Library\obj\Debug\TrinityCore-DBGUI-Library.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-Library\obj\Debug\TrinityCore-DBGUI-Library.pdb

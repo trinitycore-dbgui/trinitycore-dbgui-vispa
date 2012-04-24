@@ -1,0 +1,10 @@
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\bin\Debug\TrinityCore-DBGUI-ControlLib.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\bin\Debug\TrinityCore-DBGUI-ControlLib.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\TrinityCore_DBGUI_ControlLib.ucSearchCriteriaItem.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\TrinityCore_DBGUI_ControlLib.ucSearchCriteriaInput.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\TrinityCore_DBGUI_ControlLib.ucSearchCriteriaSet.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\TrinityCore-DBGUI-ControlLib.dll
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI-ControlLib\obj\Debug\TrinityCore-DBGUI-ControlLib.pdb
