@@ -143,7 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
-            this.Text = "TrinityCore-DBGUI [Build #%build%]";
+            this.Text = "TrinityCore-DBGUI.Vispa [Build #%build%]";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
