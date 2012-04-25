@@ -27,7 +27,8 @@ namespace TrinityCore_DBGUI
         private void frmMain_Load(object sender, EventArgs e)
         {
             /* Display version number in application window title */
-            this.Text = "TrinityCore-DBGUI [Build " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + "]";
+            Version CurVer = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            this.Text = "TrinityCore-DBGUI [Build " + CurVer.Major + "." + CurVer.Minor + "." + CurVer.Revision + "]";
 
             this.IsDisconnected();
         }
@@ -85,6 +86,14 @@ namespace TrinityCore_DBGUI
             frmGameItemSearch gSearch = new frmGameItemSearch();
             gSearch.MdiParent = this;
             gSearch.Show();
+        }
+
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheckForUpdates fChkUpd = new frmCheckForUpdates();
+            fChkUpd.MdiParent = this;
+            fChkUpd.Show();
+            fChkUpd.PerformUpdateCheck();
         }
     }
 }

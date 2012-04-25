@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoUpdater.cs" />
     <Compile Include="GameItem.cs" />
     <Compile Include="GameItemReference.cs" />
     <Compile Include="ItemSearchCriteria.cs" />

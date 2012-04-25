@@ -40,6 +40,11 @@
             this.lblAuthDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblWorldDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCharacterDB = new System.Windows.Forms.ToolStripStatusLabel();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutTrinityCoreDBGUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +55,8 @@
             this.mnuFile,
             this.mnuSearch,
             this.mnuEdit,
-            this.mnuWindow});
+            this.mnuWindow,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(826, 24);
@@ -131,6 +137,41 @@
             this.lblCharacterDB.Size = new System.Drawing.Size(71, 17);
             this.lblCharacterDB.Text = "Character DB";
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generalHelpToolStripMenuItem,
+            this.aboutTrinityCoreDBGUIToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.checkForUpdatesToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // generalHelpToolStripMenuItem
+            // 
+            this.generalHelpToolStripMenuItem.Name = "generalHelpToolStripMenuItem";
+            this.generalHelpToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.generalHelpToolStripMenuItem.Text = "General Help";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 6);
+            // 
+            // aboutTrinityCoreDBGUIToolStripMenuItem
+            // 
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Name = "aboutTrinityCoreDBGUIToolStripMenuItem";
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Text = "About ";
+            // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +209,11 @@
         private System.Windows.Forms.ToolStripStatusLabel lblAuthDB;
         private System.Windows.Forms.ToolStripStatusLabel lblWorldDB;
         private System.Windows.Forms.ToolStripStatusLabel lblCharacterDB;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalHelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutTrinityCoreDBGUIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
     }
 }
 

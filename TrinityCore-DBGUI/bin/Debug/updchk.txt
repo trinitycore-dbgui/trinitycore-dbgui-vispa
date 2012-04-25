@@ -1,0 +1,9 @@
+update.check.begin
+latest.version.major^1
+latest.version.minor^0
+latest.version.revision^450
+latest.version.release.day^25
+latest.version.release.month^4
+latest.version.release.year^2012
+latest.version.release.file^http://www.trinitycore-dbgui.info/downloads/TrinityCore-DBGUI-1.0.0.450.msi
+update.check.finish
