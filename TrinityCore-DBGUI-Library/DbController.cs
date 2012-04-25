@@ -29,7 +29,9 @@ namespace TrinityCore_DBGUI_Library
 
         public Boolean Disconnect()
         {
-            this.mConnection.Close();
+            if (this.mConnection != null)
+                this.mConnection.Close();
+
             return true;
         }
 
