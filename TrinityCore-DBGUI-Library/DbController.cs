@@ -123,6 +123,8 @@ namespace TrinityCore_DBGUI_Library
                     mCmd.CommandText += " AND " + subclassStr;
                 else if (InvTypeStr != "" && subclassStr != "")
                     mCmd.CommandText += " AND " + subclassStr;
+                else if (classStr != "" && subclassStr != "")
+                    mCmd.CommandText += " AND " + subclassStr;
                 else if (subclassStr != "")
                     mCmd.CommandText += subclassStr;
 

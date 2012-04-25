@@ -59,6 +59,8 @@ namespace TrinityCore_DBGUI_Library
         public static int RELIC = 28;
 
         /* SubClass */
+
+        /* Weapons */
         public static int AXE = 0;
         public static int BOW = 2;
         public static int GUN = 3;
@@ -72,6 +74,14 @@ namespace TrinityCore_DBGUI_Library
         public static int CROSSBOW = 18;
         public static int WAND = 19;
         public static int FISHINGPOLE = 20;
+
+        /* Armor */
+        public static int SUBCLASS_ARMOR_CLOTH = 1;
+        public static int SUBCLASS_ARMOR_LEATHER = 2;
+        public static int SUBCLASS_ARMOR_MAIL = 3;
+        public static int SUBCLASS_ARMOR_PLATE = 4;
+        public static int SUBCLASS_ARMOR_SHIELD = 6;
+        public static int SUBCLASS_ARMOR_RELIC = 11;
 
 
         /* Quality */

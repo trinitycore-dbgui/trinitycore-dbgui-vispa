@@ -144,12 +144,24 @@ namespace TrinityCore_DBGUI
 
             /* Armor */
             TreeNode tnArmorMiscellaneous = tnArmor.Nodes.Add("Miscellaneous");
+
             TreeNode tnArmorCloth = tnArmor.Nodes.Add("Cloth");
+            tnArmorCloth.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_CLOTH); 
+
             TreeNode tnArmorLeather = tnArmor.Nodes.Add("Leather");
+            tnArmorLeather.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorMail = tnArmor.Nodes.Add("Mail");
+            tnArmorMail.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorPlate = tnArmor.Nodes.Add("Plate");
+            tnArmorPlate.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
             TreeNode tnArmorShields = tnArmor.Nodes.Add("Shields");
+            tnArmorShields.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_SHIELD);
+            
             TreeNode tnArmorRelic = tnArmor.Nodes.Add("Relic");
+            tnArmorRelic.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, GameItemReference.SUBCLASS_ARMOR_RELIC); 
 
             /* Container (Final) */
             TreeNode tnContainerBag = tnContainer.Nodes.Add("Bag");
@@ -239,45 +251,106 @@ namespace TrinityCore_DBGUI
 
             /* Armor Cloth */
             TreeNode tnArmorClothHead = tnArmorCloth.Nodes.Add("Head");
+            tnArmorClothHead.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HEAD, GameItemReference.SUBCLASS_ARMOR_CLOTH); 
+
             TreeNode tnArmorClothShoulder = tnArmorCloth.Nodes.Add("Shoulder");
+            tnArmorClothShoulder.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.SHOULDER, GameItemReference.SUBCLASS_ARMOR_CLOTH); 
+
             TreeNode tnArmorClothChest = tnArmorCloth.Nodes.Add("Chest");
+            tnArmorClothChest.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.CHEST, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothWaist = tnArmorCloth.Nodes.Add("Waist");
+            tnArmorClothWaist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WAIST, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothLegs = tnArmorCloth.Nodes.Add("Legs");
+            tnArmorClothLegs.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.LEGS, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothFeet = tnArmorCloth.Nodes.Add("Feet");
+            tnArmorClothFeet.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.FEET, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothWrist = tnArmorCloth.Nodes.Add("Wrist");
+            tnArmorClothWrist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WRIST, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothHands = tnArmorCloth.Nodes.Add("Hands");
+            tnArmorClothHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_CLOTH);
+            
             TreeNode tnArmorClothBack = tnArmorCloth.Nodes.Add("Back");
+            tnArmorClothBack.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.BACK, GameItemReference.SUBCLASS_ARMOR_CLOTH); 
 
             /* Armor Leather */
             TreeNode tnArmorLeatherHead = tnArmorLeather.Nodes.Add("Head");
+            tnArmorLeatherHead.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HEAD, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorLeatherShoulder = tnArmorLeather.Nodes.Add("Shoulder");
+            tnArmorLeatherShoulder.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.SHOULDER, GameItemReference.SUBCLASS_ARMOR_LEATHER); 
+
             TreeNode tnArmorLeatherChest = tnArmorLeather.Nodes.Add("Chest");
+            tnArmorLeatherChest.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.CHEST, GameItemReference.SUBCLASS_ARMOR_LEATHER); 
+
             TreeNode tnArmorLeatherWaist = tnArmorLeather.Nodes.Add("Waist");
+            tnArmorLeatherWaist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WAIST, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorLeatherLegs = tnArmorLeather.Nodes.Add("Legs");
+            tnArmorLeatherLegs.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.LEGS, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorLeatherFeet = tnArmorLeather.Nodes.Add("Feet");
+            tnArmorLeatherFeet.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.FEET, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorLeatherWrist = tnArmorLeather.Nodes.Add("Wrist");
+            tnArmorLeatherWrist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WRIST, GameItemReference.SUBCLASS_ARMOR_LEATHER);
+            
             TreeNode tnArmorLeatherHands = tnArmorLeather.Nodes.Add("Hands");
+            tnArmorLeatherHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_LEATHER); 
 
             /* Armor Mail */
             TreeNode tnArmorMailHead = tnArmorMail.Nodes.Add("Head");
+            tnArmorMailHead.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HEAD, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailShoulder = tnArmorMail.Nodes.Add("Shoulder");
+            tnArmorMailShoulder.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.SHOULDER, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailChest = tnArmorMail.Nodes.Add("Chest");
+            tnArmorMailChest.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.CHEST, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailWaist = tnArmorMail.Nodes.Add("Waist");
+            tnArmorMailWaist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WAIST, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailLegs = tnArmorMail.Nodes.Add("Legs");
+            tnArmorMailLegs.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.LEGS, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailFeet = tnArmorMail.Nodes.Add("Feet");
+            tnArmorMailFeet.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.FEET, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailWrist = tnArmorMail.Nodes.Add("Wrist");
+            tnArmorMailWrist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WRIST, GameItemReference.SUBCLASS_ARMOR_MAIL);
+            
             TreeNode tnArmorMailHands = tnArmorMail.Nodes.Add("Hands");
+            tnArmorMailHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_MAIL); 
 
             /* Armor Plate */
             TreeNode tnArmorPlateHead = tnArmorPlate.Nodes.Add("Head");
-            TreeNode tnArmorPlateShoulder = tnArmorPlate.Nodes.Add("Shoulder");
-            TreeNode tnArmorPlateChest = tnArmorPlate.Nodes.Add("Chest");
-            TreeNode tnArmorPlateWaist = tnArmorPlate.Nodes.Add("Waist");
-            TreeNode tnArmorPlateLegs = tnArmorPlate.Nodes.Add("Legs");
-            TreeNode tnArmorPlateFeet = tnArmorPlate.Nodes.Add("Feet");
-            TreeNode tnArmorPlateWrist = tnArmorPlate.Nodes.Add("Wrist");
-            TreeNode tnArmorPlateHands = tnArmorPlate.Nodes.Add("Hands");
+            tnArmorPlateHead.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HEAD, GameItemReference.SUBCLASS_ARMOR_PLATE);
             
+            TreeNode tnArmorPlateShoulder = tnArmorPlate.Nodes.Add("Shoulder");
+            tnArmorPlateShoulder.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.SHOULDER, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateChest = tnArmorPlate.Nodes.Add("Chest");
+            tnArmorPlateChest.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.CHEST, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateWaist = tnArmorPlate.Nodes.Add("Waist");
+            tnArmorPlateWaist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WAIST, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateLegs = tnArmorPlate.Nodes.Add("Legs");
+            tnArmorPlateLegs.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.LEGS, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateFeet = tnArmorPlate.Nodes.Add("Feet");
+            tnArmorPlateFeet.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.FEET, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateWrist = tnArmorPlate.Nodes.Add("Wrist");
+            tnArmorPlateWrist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WRIST, GameItemReference.SUBCLASS_ARMOR_PLATE);
+            
+            TreeNode tnArmorPlateHands = tnArmorPlate.Nodes.Add("Hands");
+            tnArmorPlateHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_PLATE); 
 
         }
 
