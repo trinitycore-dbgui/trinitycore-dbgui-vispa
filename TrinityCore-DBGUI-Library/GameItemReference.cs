@@ -75,13 +75,24 @@ namespace TrinityCore_DBGUI_Library
         public static int WAND = 19;
         public static int FISHINGPOLE = 20;
 
-        /* Armor */
+        /* Armor: Subclass */
         public static int SUBCLASS_ARMOR_CLOTH = 1;
         public static int SUBCLASS_ARMOR_LEATHER = 2;
         public static int SUBCLASS_ARMOR_MAIL = 3;
         public static int SUBCLASS_ARMOR_PLATE = 4;
         public static int SUBCLASS_ARMOR_SHIELD = 6;
         public static int SUBCLASS_ARMOR_RELIC = 11;
+
+        /* Container: Subclass */
+        public static int SUBCLASS_CONTAINER_BAG = 0;
+        public static int SUBCLASS_CONTAINER_HERB_BAG = 2;
+        public static int SUBCLASS_CONTAINER_ENCHANTING_BAG = 3;
+        public static int SUBCLASS_CONTAINER_ENGINEERING_BAG = 4;
+        public static int SUBCLASS_CONTAINER_GEM_BAG = 5;
+        public static int SUBCLASS_CONTAINER_MINING_BAG = 6;
+        public static int SUBCLASS_CONTAINER_LEATHERWORKING_BAG = 7;
+        public static int SUBCLASS_CONTAINER_INSCRIPTION_BAG = 8;
+        public static int SUBCLASS_CONTAINER_TACKLEBOX_BAG = 9;
 
 
         /* Quality */

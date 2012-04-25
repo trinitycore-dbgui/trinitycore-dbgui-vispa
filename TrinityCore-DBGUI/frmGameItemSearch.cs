@@ -165,14 +165,31 @@ namespace TrinityCore_DBGUI
 
             /* Container (Final) */
             TreeNode tnContainerBag = tnContainer.Nodes.Add("Bag");
+            tnContainerBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_BAG);
+
             TreeNode tnContainerHerbBag = tnContainer.Nodes.Add("Herb Bag");
+            tnContainerHerbBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_HERB_BAG);
+
             TreeNode tnContainerEnchantingBag = tnContainer.Nodes.Add("Enchanting Bag");
+            tnContainerEnchantingBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_ENCHANTING_BAG);
+
             TreeNode tnContainerEngineeringBag = tnContainer.Nodes.Add("Engineering Bag");
+            tnContainerEngineeringBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_ENGINEERING_BAG);
+
             TreeNode tnContainerGemBag = tnContainer.Nodes.Add("Gem Bag");
+            tnContainerGemBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_GEM_BAG);
+
             TreeNode tnContainerMiningBag = tnContainer.Nodes.Add("Mining Bag");
+            tnContainerMiningBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_MINING_BAG);
+
             TreeNode tnContainerLeatherworkingBag = tnContainer.Nodes.Add("Leatherworking Bag");
+            tnContainerLeatherworkingBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_LEATHERWORKING_BAG);
+
             TreeNode tnContainerInscriptionBag = tnContainer.Nodes.Add("Inscription Bag");
+            tnContainerInscriptionBag.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_INSCRIPTION_BAG);
+
             TreeNode tnContainerTackleBox = tnContainer.Nodes.Add("Tackle Box");
+            tnContainerTackleBox.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, GameItemReference.BAG, GameItemReference.SUBCLASS_CONTAINER_TACKLEBOX_BAG);
 
             /* Consumables (Final) */
             TreeNode tnConsumableFoodDrink = tnConsumable.Nodes.Add("Food & Drink");

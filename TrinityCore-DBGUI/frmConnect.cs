@@ -170,7 +170,12 @@ namespace TrinityCore_DBGUI
             this.HasPopulatedDbs = false;
             this.PopulateCombos();
         }
-        
+
+        private void SaveCurrentSettings()
+        {
+            /* save current settings to file for later use (everything bar password) */
+        }
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
 
