@@ -153,7 +153,6 @@
             this.cboCharDB.Name = "cboCharDB";
             this.cboCharDB.Size = new System.Drawing.Size(101, 21);
             this.cboCharDB.TabIndex = 5;
-            this.cboCharDB.SelectedIndexChanged += new System.EventHandler(this.cboCharDB_SelectedIndexChanged);
             // 
             // cboWorldDB
             // 
@@ -164,7 +163,6 @@
             this.cboWorldDB.Name = "cboWorldDB";
             this.cboWorldDB.Size = new System.Drawing.Size(101, 21);
             this.cboWorldDB.TabIndex = 4;
-            this.cboWorldDB.SelectedIndexChanged += new System.EventHandler(this.cboWorldDB_SelectedIndexChanged);
             // 
             // cboAuthDB
             // 
@@ -279,6 +277,7 @@
             this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmConnect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect to Database";
             this.Load += new System.EventHandler(this.frmConnect_Load);
             this.tabConnectionInformation.ResumeLayout(false);

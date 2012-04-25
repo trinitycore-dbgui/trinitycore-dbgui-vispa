@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.IO;
+
 using System.Collections;
 
 namespace TrinityCore_DBGUI
@@ -75,6 +77,7 @@ namespace TrinityCore_DBGUI
                 tBox.Font = new Font(tBox.Font, FontStyle.Regular);
                 tBox.ForeColor = Color.Black;
             }
+
         }
 
 
@@ -87,18 +90,24 @@ namespace TrinityCore_DBGUI
                 tBox.Font = new Font(tBox.Font, FontStyle.Italic);
                 tBox.ForeColor = Color.Silver;
             }
+
+            this.PopulateCombos();
         }
 
 
         private void frmConnect_Load(object sender, EventArgs e)
         {
-
+            this.LoadSavedSettings();
+            this.HasPopulatedDbs = true;
         }
 
         private void PopulateCombos()
         {
 
             if (this.HasPopulatedDbs == true)
+                return;
+
+            if (this.txtDatabaseHostname.Text == "database hostname" || this.txtDatabasePort.Text == "port" || this.txtDatabaseUsername.Text == "database username")
                 return;
 
             frmMain fMain = (frmMain)this.MdiParent;
@@ -143,16 +152,6 @@ namespace TrinityCore_DBGUI
             this.PopulateCombos();
         }
 
-        private void cboWorldDB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboCharDB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRefresh1_Click(object sender, EventArgs e)
         {
             this.HasPopulatedDbs = false;
@@ -171,9 +170,113 @@ namespace TrinityCore_DBGUI
             this.PopulateCombos();
         }
 
+        private void LoadSavedSettings()
+        {
+            /* load saved settings into connection info */
+
+            if (!File.Exists("tcdb.cfg"))
+                return;
+
+            this.cboAuthDB.Items.Clear();
+            this.cboWorldDB.Items.Clear();
+            this.cboCharDB.Items.Clear();
+
+            frmMain fMain = (frmMain)this.MdiParent;
+
+            using (StreamReader sr = new StreamReader("tcdb.cfg"))
+            {
+                String line;
+                int cLine = 0;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    cLine++;
+
+                    if ((cLine == 1) && (line != "config.begin"))
+                        return; /* invalid or corrupt config file */
+
+                    string[] cfgLine = line.Split(':');
+
+                    if (cfgLine[0] == "db.hostname")
+                    {
+                        this.txtDatabaseHostname_Enter(this.txtDatabaseUsername, new EventArgs());
+                        this.txtDatabaseHostname.Text = cfgLine[1];
+                        fMain.trinityCoreController.DatabaseHostname = cfgLine[1];
+                    }
+
+
+                    if (cfgLine[0] == "db.port")
+                    {
+                        this.txtDatabasePort_Enter(this.txtDatabasePort, new EventArgs());
+                        this.txtDatabasePort.Text = cfgLine[1];
+                        fMain.trinityCoreController.DatabasePort = int.Parse(cfgLine[1]);
+                        
+                    }
+
+                    if (cfgLine[0] == "db.user")
+                    {
+                        this.txtDatabaseUsername_Enter(this.txtDatabaseUsername, new EventArgs());
+                        this.txtDatabaseUsername.Text = cfgLine[1];
+                        fMain.trinityCoreController.DatabaseUsername = cfgLine[1];
+                    }
+
+                    if (cfgLine[0] == "db.found")
+                    {
+                        this.cboAuthDB.Items.Add(cfgLine[1]);
+                        this.cboCharDB.Items.Add(cfgLine[1]);
+                        this.cboWorldDB.Items.Add(cfgLine[1]);
+                    }
+
+                    if (cfgLine[0] == "db.auth")
+                        this.cboAuthDB.SelectedIndex = int.Parse(cfgLine[1]);
+
+                    if (cfgLine[0] == "db.char")
+                        this.cboCharDB.SelectedIndex = int.Parse(cfgLine[1]);
+
+                    if (cfgLine[0] == "db.world")
+                        this.cboWorldDB.SelectedIndex = int.Parse(cfgLine[1]);
+
+                    if (cfgLine[0] == "config.end")
+                    {
+                        sr.Close();
+                        return;
+                    }
+                }
+
+                sr.Close();
+            }
+
+
+        }
+
         private void SaveCurrentSettings()
         {
             /* save current settings to file for later use (everything bar password) */
+
+            TextWriter tw = new StreamWriter("tcdb.cfg");
+
+            tw.WriteLine("config.begin");
+
+            // write a line of text to the file
+            tw.WriteLine("db.hostname:" + this.txtDatabaseHostname.Text);
+            tw.WriteLine("db.port:" + this.txtDatabasePort.Text);
+            tw.WriteLine("db.user:" + this.txtDatabaseUsername.Text);
+
+            foreach (String dbName in this.cboAuthDB.Items)
+            {
+                tw.WriteLine("db.found:" + dbName);
+            }
+
+            tw.WriteLine("db.auth:" + this.cboAuthDB.SelectedIndex);
+            tw.WriteLine("db.char:" + this.cboCharDB.SelectedIndex);
+            tw.WriteLine("db.world:" + this.cboWorldDB.SelectedIndex);
+
+            tw.WriteLine("config.end");
+
+            // close the stream
+            tw.Close();
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -187,6 +290,10 @@ namespace TrinityCore_DBGUI
                 fMain.trinityCoreController.CharDB = this.cboCharDB.Text;
                 fMain.trinityCoreController.WorldDB = this.cboWorldDB.Text;
 
+                fMain.trinityCoreController.DatabaseHostname = this.txtDatabaseHostname.Text;
+                fMain.trinityCoreController.DatabaseUsername = this.txtDatabaseUsername.Text;
+                fMain.trinityCoreController.DatabasePassword = this.txtDatabasePassword.Text;
+
                 fMain.trinityCoreController.ConnectToAuthDB();
                 fMain.trinityCoreController.ConnectToCharacterDb();
                 fMain.trinityCoreController.ConnectToWorldDB();
@@ -197,6 +304,8 @@ namespace TrinityCore_DBGUI
                 return;
             }
 
+            /* save settings */
+            this.SaveCurrentSettings();
 
             fMain.IsConnected();
 
