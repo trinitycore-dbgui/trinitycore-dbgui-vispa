@@ -21,6 +21,7 @@ namespace TrinityCore_DBGUI_ControlLib
 
         public HybridDictionary CriteriaList = new HybridDictionary(); //   CriteriaList = new ArrayList();
         public object CurrentInputObject;
+        public object CurrentInputObject2;
 
         public ucSearchCriteriaInput()
         {
@@ -37,6 +38,8 @@ namespace TrinityCore_DBGUI_ControlLib
 
             this.cboLogic.Items.Add("LIKE");
             this.cboLogic.Items.Add("NOT LIKE");
+
+            this.cboLogic.Items.Add("BETWEEN");
 
             this.cboLogic.SelectedIndex = 0;
         
@@ -86,12 +89,7 @@ namespace TrinityCore_DBGUI_ControlLib
                 this.CurrentInputObject = cBox;
             }
 
-            
-
-        }
-
-        private void lblID_Click(object sender, EventArgs e)
-        {
+            this.cboLogic_SelectedIndexChanged(this, new EventArgs());
 
         }
 
@@ -100,6 +98,7 @@ namespace TrinityCore_DBGUI_ControlLib
             ucSearchCriteriaItem uItem = new ucSearchCriteriaItem();
 
             String SearchCrit = "";
+            String SearchCrit2 = "";
             String ActualSQL = "";
 
             if (this.CurrentInputObject == null)
@@ -109,26 +108,119 @@ namespace TrinityCore_DBGUI_ControlLib
             {
                 TextBox tBox = (TextBox)this.CurrentInputObject;
                 SearchCrit = tBox.Text;
-                //ActualSQL = this.cboCriteriaID.Text + " LIKE '" + SearchCrit + "'";
-                ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + SearchCrit + "'";
+
+                if (this.cboLogic.Text == "BETWEEN")
+                {
+                    TextBox tBox2 = (TextBox)this.CurrentInputObject2;
+                    SearchCrit2 = tBox2.Text;
+                    ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + SearchCrit + "' AND '" + SearchCrit2 + "'";
+                }
+                else
+                {
+                    ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + SearchCrit + "'";
+                }
+
             }
             else if (this.CurrentInputObject.GetType() == typeof(ComboBox))
             {
                 ComboBox cBox = (ComboBox)this.CurrentInputObject;
                 SearchCrit = cBox.Text;
 
-                //string[] words = s.Split(' ');
-                string[] id = SearchCrit.Split(':');
-                //ActualSQL = this.cboCriteriaID.Text + "='" + id[0] + "'";
-                ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + id[0] + "'";
+                if (this.cboLogic.Text == "BETWEEN")
+                {
+                    ComboBox cBox2 = (ComboBox)this.CurrentInputObject2;
+                    SearchCrit2 = cBox2.Text;
+
+                    string[] id = SearchCrit.Split(':');
+                    string[] id2 = SearchCrit2.Split(':');
+
+                    ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + id[0] + "' AND '" + id2[0] + "'";
+                }
+                else
+                {
+                    string[] id = SearchCrit.Split(':');
+                    ActualSQL = this.cboCriteriaID.Text + " " + this.cboLogic.Text + " '" + id[0] + "'";
+                }
 
             }
 
-            uItem.SetCriteriaText(this.cboCriteriaID.Text + " " + this.cboLogic.Text + " " + SearchCrit);
+            if (this.cboLogic.Text == "BETWEEN")
+            {
+                uItem.SetCriteriaText(this.cboCriteriaID.Text + " " + this.cboLogic.Text + " " + SearchCrit + " AND " + SearchCrit2);
+            }
+            else
+            {
+                uItem.SetCriteriaText(this.cboCriteriaID.Text + " " + this.cboLogic.Text + " " + SearchCrit);
+            }
+
             uItem.ActualCriteriaSQL = ActualSQL;
 
             if (this.RequestedAddCriteria != null)
                 this.RequestedAddCriteria(uItem);
+        }
+
+        private void cboLogic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (this.cboLogic.Text == "BETWEEN")
+            {
+                /* make an exact copy of the current input control and place it next to the other */
+
+                if (this.CurrentInputObject.GetType() == typeof(TextBox))
+                {
+                    TextBox tBox1 = (TextBox)this.CurrentInputObject;
+                    TextBox tBox2 = new TextBox();
+
+                    tBox1.Width = (this.pnlCriteriaInput.Width - 10) / 2;
+                    tBox2.Width = (this.pnlCriteriaInput.Width - 10) / 2;
+
+                    tBox2.Left = tBox1.Left + tBox1.Width + 5;
+
+                    this.CurrentInputObject2 = tBox2;
+
+                    this.pnlCriteriaInput.Controls.Add(tBox2);
+                    tBox2.Show();
+                }
+                else if (this.CurrentInputObject.GetType() == typeof(ComboBox))
+                {
+                    ComboBox cBox1 = (ComboBox)this.CurrentInputObject;
+                    ComboBox cBox2 = new ComboBox();
+
+                    cBox1.Width = (this.pnlCriteriaInput.Width - 10) / 2;
+                    cBox2.Width = (this.pnlCriteriaInput.Width - 10) / 2;
+
+                    cBox2.Left = cBox2.Left + cBox2.Width + 5;
+
+                    cBox2.DropDownStyle = cBox1.DropDownStyle;
+
+                    this.CurrentInputObject2 = cBox2;
+
+                    foreach (String cboItem in cBox1.Items)
+                    {
+                        cBox2.Items.Add(cboItem);
+                    }
+
+                    cBox2.SelectedIndex = cBox1.SelectedIndex;
+
+                    this.pnlCriteriaInput.Controls.Add(cBox2);
+                    cBox2.Show();
+                }
+            }
+            else
+            {
+                /* not between */
+                if (this.CurrentInputObject2 != null)
+                {
+                    /* this implies that the inputcriteria was setup for between/range, but now does not need to be */
+                    this.pnlCriteriaInput.Controls.Clear();
+                    // now call the initial combobox selector setup 
+
+                    this.CurrentInputObject2 = null;
+                    this.cboCriteriaID_SelectedIndexChanged(this, new EventArgs());
+
+                }
+            }
+
         }
 
     }

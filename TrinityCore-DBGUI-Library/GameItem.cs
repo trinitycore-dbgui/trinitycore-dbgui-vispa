@@ -14,6 +14,9 @@ namespace TrinityCore_DBGUI_Library
         public int Quality;
         public int Subclass;
 
+        public int ItemLevel;
+        public int RequiredLevel;
+
         public String Name;
 
     }

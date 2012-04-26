@@ -45,6 +45,7 @@
     <Compile Include="GameItem.cs" />
     <Compile Include="GameItemReference.cs" />
     <Compile Include="ItemSearchCriteria.cs" />
+    <Compile Include="ItemSet.cs" />
     <Compile Include="TrinityCoreDBGUI_Controller.cs" />
     <Compile Include="DbController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

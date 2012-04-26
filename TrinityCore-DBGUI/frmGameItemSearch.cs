@@ -16,8 +16,7 @@ namespace TrinityCore_DBGUI
 {
     public partial class frmGameItemSearch : Form
     {
-       
- 
+        public ArrayList ItemSetList = new ArrayList();
 
         public frmGameItemSearch()
         {
@@ -32,62 +31,76 @@ namespace TrinityCore_DBGUI
 
         private void PopulateCriterias()
         {
+            this.ucSearchCriteriaInput1.AddCriteriaType("entry", CriteriaRequester.CriteriaType.Text);
             this.ucSearchCriteriaInput1.AddCriteriaType("name", CriteriaRequester.CriteriaType.Text);
+            this.ucSearchCriteriaInput1.AddCriteriaType("ItemLevel", CriteriaRequester.CriteriaType.Text);
+            this.ucSearchCriteriaInput1.AddCriteriaType("RequiredLevel", CriteriaRequester.CriteriaType.Text);
 
-            CriteriaRequester cRequester = new CriteriaRequester(CriteriaRequester.CriteriaType.DropDown, "Quality");
-            cRequester.DropDownContent.Add("0 : Poor");
-            cRequester.DropDownContent.Add("1 : Common");
-            cRequester.DropDownContent.Add("2 : Uncommon");
-            cRequester.DropDownContent.Add("3 : Rare");
-            cRequester.DropDownContent.Add("4 : Epic");
-            cRequester.DropDownContent.Add("5 : Legendary");
-            cRequester.DropDownContent.Add("6 : Artifact");
-            cRequester.DropDownContent.Add("7 : Heirloom");
+            CriteriaRequester cRequesterQuality = new CriteriaRequester(CriteriaRequester.CriteriaType.DropDown, "Quality");
+            cRequesterQuality.DropDownContent.Add("0 : Poor");
+            cRequesterQuality.DropDownContent.Add("1 : Common");
+            cRequesterQuality.DropDownContent.Add("2 : Uncommon");
+            cRequesterQuality.DropDownContent.Add("3 : Rare");
+            cRequesterQuality.DropDownContent.Add("4 : Epic");
+            cRequesterQuality.DropDownContent.Add("5 : Legendary");
+            cRequesterQuality.DropDownContent.Add("6 : Artifact");
+            cRequesterQuality.DropDownContent.Add("7 : Heirloom");
+            this.ucSearchCriteriaInput1.AddCriteriaType(cRequesterQuality);
 
-            this.ucSearchCriteriaInput1.AddCriteriaType(cRequester);
+            CriteriaRequester cRequesterBonding = new CriteriaRequester(CriteriaRequester.CriteriaType.DropDown, "bonding");
+            cRequesterBonding.DropDownContent.Add("0 : No Bind");
+            cRequesterBonding.DropDownContent.Add("1 : Binds when picked up");
+            cRequesterBonding.DropDownContent.Add("2 : Binds when equipped");
+            cRequesterBonding.DropDownContent.Add("3 : Binds when used");
+            cRequesterBonding.DropDownContent.Add("4 : Quest Item ?");
+            cRequesterBonding.DropDownContent.Add("5 : Quest Item ?");
+            this.ucSearchCriteriaInput1.AddCriteriaType(cRequesterBonding);
 
         }
 
         private void PopulateCategories()
         {
             /* Top Level */
-            TreeNode tnWeapons = this.tViewType.Nodes.Add("Weapon"); //class WEAPON            
+            TreeNode tnAll = this.tViewType.Nodes.Add("Search Everything");
+            tnAll.Tag = new ItemSearchCriteria(-1, -1, -1);
+
+            TreeNode tnWeapons = tnAll.Nodes.Add("Weapon"); //class WEAPON            
             tnWeapons.Tag = new ItemSearchCriteria(GameItemReference.WEAPON, -1, -1);
 
-            TreeNode tnArmor = this.tViewType.Nodes.Add("Armor"); //class ARMOR
+            TreeNode tnArmor = tnAll.Nodes.Add("Armor"); //class ARMOR
             tnArmor.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, -1, -1);
 
-            TreeNode tnContainer = this.tViewType.Nodes.Add("Container"); //class CONTAINER
+            TreeNode tnContainer = tnAll.Nodes.Add("Container"); //class CONTAINER
             tnContainer.Tag = new ItemSearchCriteria(GameItemReference.CONTAINER, -1, -1);
 
-            TreeNode tnConsumable = this.tViewType.Nodes.Add("Consumable"); //class CONSUMABLE
+            TreeNode tnConsumable = tnAll.Nodes.Add("Consumable"); //class CONSUMABLE
             tnConsumable.Tag = new ItemSearchCriteria(GameItemReference.CONSUMABLE, -1, -1);
 
-            TreeNode tnGlyph = this.tViewType.Nodes.Add("Glyph"); //class GLYPH
+            TreeNode tnGlyph = tnAll.Nodes.Add("Glyph"); //class GLYPH
             tnGlyph.Tag = new ItemSearchCriteria(GameItemReference.GLYPH, -1, -1);
 
-            TreeNode tnTradeGoods = this.tViewType.Nodes.Add("Trade Goods"); //class TRADEGOODS
+            TreeNode tnTradeGoods = tnAll.Nodes.Add("Trade Goods"); //class TRADEGOODS
             tnTradeGoods.Tag = new ItemSearchCriteria(GameItemReference.TRADEGOODS, -1, -1);
 
-            TreeNode tnRecipe = this.tViewType.Nodes.Add("Recipe"); //class RECIPE
+            TreeNode tnRecipe = tnAll.Nodes.Add("Recipe"); //class RECIPE
             tnTradeGoods.Tag = new ItemSearchCriteria(GameItemReference.RECIPE, -1, -1);
 
-            TreeNode tnGem = this.tViewType.Nodes.Add("Gem"); //class GEM
+            TreeNode tnGem = tnAll.Nodes.Add("Gem"); //class GEM
             tnGem.Tag = new ItemSearchCriteria(GameItemReference.GEM, -1, -1);
 
-            TreeNode tnMiscellaneous = this.tViewType.Nodes.Add("Miscellaneous"); //class MISCCLASS
+            TreeNode tnMiscellaneous = tnAll.Nodes.Add("Miscellaneous"); //class MISCCLASS
             tnMiscellaneous.Tag = new ItemSearchCriteria(GameItemReference.MISCCLASS, -1, -1);
 
-            TreeNode tnQuest = this.tViewType.Nodes.Add("Quest"); //class QUEST
+            TreeNode tnQuest = tnAll.Nodes.Add("Quest"); //class QUEST
             tnQuest.Tag = new ItemSearchCriteria(GameItemReference.QUEST, -1, -1);
 
-            TreeNode tnTokensCurrency = this.tViewType.Nodes.Add("Tokens / Currency"); //class CURRENCYTOKENS
+            TreeNode tnTokensCurrency = tnAll.Nodes.Add("Tokens / Currency"); //class CURRENCYTOKENS
             tnTokensCurrency.Tag = new ItemSearchCriteria(GameItemReference.CURRENCYTOKENS, -1, -1);
 
-            TreeNode tnKey = this.tViewType.Nodes.Add("Key"); //class KEY
+            TreeNode tnKey = tnAll.Nodes.Add("Key"); //class KEY
             tnKey.Tag = new ItemSearchCriteria(GameItemReference.KEY, -1, -1);
 
-            TreeNode tnProjectile = this.tViewType.Nodes.Add("Projectile"); //class PROJECTILE
+            TreeNode tnProjectile = tnAll.Nodes.Add("Projectile"); //class PROJECTILE
             tnProjectile.Tag = new ItemSearchCriteria(GameItemReference.PROJECTILE, -1, -1);
 
             /* Weapons */
@@ -367,8 +380,10 @@ namespace TrinityCore_DBGUI
             tnArmorPlateWrist.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.WRIST, GameItemReference.SUBCLASS_ARMOR_PLATE);
             
             TreeNode tnArmorPlateHands = tnArmorPlate.Nodes.Add("Hands");
-            tnArmorPlateHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_PLATE); 
+            tnArmorPlateHands.Tag = new ItemSearchCriteria(GameItemReference.ARMOR, GameItemReference.HANDS, GameItemReference.SUBCLASS_ARMOR_PLATE);
 
+
+            tnAll.Expand();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -405,7 +420,19 @@ namespace TrinityCore_DBGUI
             
             iSrchCriteria.ExtraSQL = SpecificCriteriaSQL;
 
+            try
+            {
+                iSrchCriteria.LIMIT_RESULTS = int.Parse(this.txtLimitBy.Text);
+            }
+            catch (Exception ex)
+            {
+                iSrchCriteria.LIMIT_RESULTS = 500;
+                this.txtLimitBy.Text = "500";
+            }
+
+            this.Cursor = Cursors.WaitCursor;
             ArrayList nResults = fMain.trinityCoreController.worldDb.GetGameItemList(iSrchCriteria);
+            this.Cursor = Cursors.Default;
 
             if (nResults.Count < 1)
                 return;
@@ -441,29 +468,52 @@ namespace TrinityCore_DBGUI
 
                 if (gItem.Quality == GameItemReference.QUALITY_HEIRLOOM)
                     lvItem.ForeColor = Color.Wheat;
-                
+
                 lvItem.SubItems.Add(gItem.Name, Color.Purple, Color.White, null);
+                lvItem.SubItems.Add(gItem.ItemLevel.ToString(), Color.Purple, Color.White, null);
+                lvItem.SubItems.Add(gItem.RequiredLevel.ToString(), Color.Purple, Color.White, null);
 
                 this.lstItemSearchResults.Items.Add(lvItem);
 
+                this.lblSQLQuery.Text = fMain.trinityCoreController.worldDb.LastSQLQuery;
+                this.lblResults.Text = nResults.Count.ToString() + " Results";
             }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            //ucSearchTest.SetCriteriaText("Test 1 2 3 4 5 6 7");
-
-            //ucSearchCriteriaItem uItem = new ucSearchCriteriaItem();
-            //uItem.SetCriteriaText("Name=Test");
-            //this.ucSearchCriteriaSet1.AddCriteria(uItem);
 
         }
 
         private void ucSearchCriteriaInput1_RequestedAddCriteria(ucSearchCriteriaItem uCriteriaItem)
         {
             this.ucSearchCriteriaSet1.AddCriteria(uCriteriaItem);
+        }
+
+        private void createItemSetToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            frmMain fMain = (frmMain)this.MdiParent;
+
+            if (this.ItemSetList.Count < 1)
+            {
+                this.ItemSetList = fMain.trinityCoreController.worldDb.GetItemSetList();
+                ToolStripComboBox cboItemList = new ToolStripComboBox();
+
+                foreach (ItemSet iSet in this.ItemSetList)
+                {
+                    this.cMenuRightClickResultAddtoItemSetItemList.Items.Add(iSet.EntryID + " : " + iSet.Name);
+                }
+                
+            }
+        }
+
+        private void viewOnWowHeadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
+
+            if (this.lstItemSearchResults.SelectedItems.Count < 1)
+                return;
+
+            foreach (ListViewItem lvi in this.lstItemSearchResults.SelectedItems)
+            {
+                System.Diagnostics.Process.Start("http://www.wowhead.com/item=" + lvi.Text);
+            }
         }
 
 

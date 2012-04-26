@@ -125,9 +125,10 @@ namespace TrinityCore_DBGUI
                 fMain.trinityCoreController.DatabasePort = 3306;
             }
 
-            
 
+            this.Cursor = Cursors.WaitCursor;
             ArrayList dbList = fMain.trinityCoreController.GetDatabaseList();
+            this.Cursor = Cursors.Default;
 
             if (dbList.Count < 1)
                 return;
@@ -294,9 +295,11 @@ namespace TrinityCore_DBGUI
                 fMain.trinityCoreController.DatabaseUsername = this.txtDatabaseUsername.Text;
                 fMain.trinityCoreController.DatabasePassword = this.txtDatabasePassword.Text;
 
+                this.Cursor = Cursors.WaitCursor;
                 fMain.trinityCoreController.ConnectToAuthDB();
                 fMain.trinityCoreController.ConnectToCharacterDb();
                 fMain.trinityCoreController.ConnectToWorldDB();
+                this.Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {

@@ -116,6 +116,7 @@
             this.cboLogic.Name = "cboLogic";
             this.cboLogic.Size = new System.Drawing.Size(100, 21);
             this.cboLogic.TabIndex = 2;
+            this.cboLogic.SelectedIndexChanged += new System.EventHandler(this.cboLogic_SelectedIndexChanged);
             // 
             // ucSearchCriteriaInput
             // 
