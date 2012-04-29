@@ -34,6 +34,7 @@
     <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,13 +43,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoUpdater.cs" />
+    <Compile Include="DbReferences.cs" />
     <Compile Include="GameItem.cs" />
     <Compile Include="GameItemReference.cs" />
     <Compile Include="ItemSearchCriteria.cs" />
     <Compile Include="ItemSet.cs" />
+    <Compile Include="SearchConfiguration.cs" />
+    <Compile Include="SearchResultFormatRule.cs" />
     <Compile Include="TrinityCoreDBGUI_Controller.cs" />
     <Compile Include="DbController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrinityCore-DBGUI-ControlLib\TrinityCore-DBGUI-ControlLib.csproj">
+      <Project>{BFE935E1-CEE0-4263-92A4-83938645251D}</Project>
+      <Name>TrinityCore-DBGUI-ControlLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -25,6 +25,8 @@ namespace TrinityCore_DBGUI_Library
         public DbController characterDb = new DbController();
         public DbController dbLister = new DbController();
 
+        public DbReferences dbRef = new DbReferences();
+
         public TrinityCoreDBGUI_Controller()
         {
         }

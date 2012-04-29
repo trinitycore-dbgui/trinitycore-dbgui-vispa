@@ -6,6 +6,7 @@ using System.Text;
 using MySql;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 using System.Collections;
 
@@ -101,6 +102,98 @@ namespace TrinityCore_DBGUI_Library
 
             return nResults;
 
+        }
+
+
+        public DataSet PerformDataSearch(ItemSearchCriteria SrchCriteria)
+        {
+            String mCmd ="";
+
+            mCmd = SrchCriteria.SelectorCommand;
+
+            String classStr = "";
+            String InvTypeStr = "";
+            String subclassStr = "";
+
+            if (SrchCriteria.ICLASS != -1)
+                classStr = "class = " + SrchCriteria.ICLASS;
+
+            if (SrchCriteria.INVENTORY_TYPE != -1)
+                InvTypeStr = "InventoryType = " + SrchCriteria.INVENTORY_TYPE;
+
+            if (SrchCriteria.SUBCLASS != -1)
+                subclassStr = "subclass = " + SrchCriteria.SUBCLASS;
+
+            if (classStr != "" || InvTypeStr != "" || subclassStr != "")
+            {
+
+                mCmd += " WHERE ";
+
+                if (classStr != "")
+                {
+                    mCmd += classStr;
+                }
+
+                if (classStr != "" && InvTypeStr != "")
+                    mCmd += " AND " + InvTypeStr;
+                else if (InvTypeStr != "")
+                    mCmd += InvTypeStr;
+
+                if (classStr != "" && InvTypeStr != "" && subclassStr != "")
+                    mCmd += " AND " + subclassStr;
+                else if (InvTypeStr != "" && subclassStr != "")
+                    mCmd += " AND " + subclassStr;
+                else if (classStr != "" && subclassStr != "")
+                    mCmd += " AND " + subclassStr;
+                else if (subclassStr != "")
+                    mCmd += subclassStr;
+
+                if (SrchCriteria.ExtraSQL != "")
+                {
+                    mCmd += " AND " + SrchCriteria.ExtraSQL;
+                }
+
+                if (SrchCriteria.LIMIT_RESULTS == 0)
+                {
+                    mCmd += " LIMIT 500";
+                }
+                else
+                {
+                    mCmd += " LIMIT " + SrchCriteria.LIMIT_RESULTS;
+                }
+
+            }
+            else
+            {
+                /* search everything */
+                if (SrchCriteria.ExtraSQL != "")
+                {
+                    mCmd += " WHERE " + SrchCriteria.ExtraSQL;
+                }
+
+                if (SrchCriteria.LIMIT_RESULTS == 0)
+                {
+                    mCmd += " LIMIT 500";
+                }
+                else
+                {
+                    mCmd += " LIMIT " + SrchCriteria.LIMIT_RESULTS;
+                }
+
+            }
+
+            if (this.mConnection.State != System.Data.ConnectionState.Open)
+                this.mConnection.Open();
+
+            MySqlDataAdapter dAdapter = new MySqlDataAdapter(mCmd, this.mConnection);
+
+            DataSet dSet = new DataSet();
+            dAdapter.Fill(dSet);
+
+            
+            this.LastSQLQuery = mCmd;
+
+            return dSet;
         }
 
         public ArrayList GetGameItemList(ItemSearchCriteria SrchCriteria)

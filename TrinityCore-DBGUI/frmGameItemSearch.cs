@@ -516,6 +516,91 @@ namespace TrinityCore_DBGUI
             }
         }
 
+        private void lstItemSearchResults_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cMenuRightClickResult_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void editItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteItemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createItemSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cMenuRightClickResultAddtoItemSetItemList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucSearchCriteriaInput1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLimitBy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucSearchCriteriaSet1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tViewType_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void lblSQLQuery_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResults_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

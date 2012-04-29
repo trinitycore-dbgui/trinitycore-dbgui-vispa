@@ -35,16 +35,20 @@
             this.mnuSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.gameItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseReferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTrinityCoreDBGUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAuthDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblWorldDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCharacterDB = new System.Windows.Forms.ToolStripStatusLabel();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutTrinityCoreDBGUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.nPCsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.questsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +85,9 @@
             // mnuSearch
             // 
             this.mnuSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameItemsToolStripMenuItem});
+            this.gameItemsToolStripMenuItem,
+            this.nPCsToolStripMenuItem,
+            this.questsToolStripMenuItem});
             this.mnuSearch.Name = "mnuSearch";
             this.mnuSearch.Size = new System.Drawing.Size(54, 20);
             this.mnuSearch.Text = "Search";
@@ -89,15 +95,24 @@
             // gameItemsToolStripMenuItem
             // 
             this.gameItemsToolStripMenuItem.Name = "gameItemsToolStripMenuItem";
-            this.gameItemsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.gameItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gameItemsToolStripMenuItem.Text = "Game Items";
             this.gameItemsToolStripMenuItem.Click += new System.EventHandler(this.gameItemsToolStripMenuItem_Click);
             // 
             // mnuEdit
             // 
+            this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseReferencesToolStripMenuItem});
             this.mnuEdit.Name = "mnuEdit";
             this.mnuEdit.Size = new System.Drawing.Size(39, 20);
             this.mnuEdit.Text = "Edit";
+            // 
+            // databaseReferencesToolStripMenuItem
+            // 
+            this.databaseReferencesToolStripMenuItem.Name = "databaseReferencesToolStripMenuItem";
+            this.databaseReferencesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.databaseReferencesToolStripMenuItem.Text = "Database References";
+            this.databaseReferencesToolStripMenuItem.Click += new System.EventHandler(this.databaseReferencesToolStripMenuItem_Click);
             // 
             // mnuWindow
             // 
@@ -105,13 +120,49 @@
             this.mnuWindow.Size = new System.Drawing.Size(63, 20);
             this.mnuWindow.Text = "&Window";
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generalHelpToolStripMenuItem,
+            this.aboutTrinityCoreDBGUIToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.checkForUpdatesToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // generalHelpToolStripMenuItem
+            // 
+            this.generalHelpToolStripMenuItem.Name = "generalHelpToolStripMenuItem";
+            this.generalHelpToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.generalHelpToolStripMenuItem.Text = "General Help";
+            // 
+            // aboutTrinityCoreDBGUIToolStripMenuItem
+            // 
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Name = "aboutTrinityCoreDBGUIToolStripMenuItem";
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Text = "About ";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 6);
+            // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblAuthDB,
             this.lblWorldDB,
-            this.lblCharacterDB});
+            this.lblCharacterDB,
+            this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 497);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -137,40 +188,25 @@
             this.lblCharacterDB.Size = new System.Drawing.Size(71, 17);
             this.lblCharacterDB.Text = "Character DB";
             // 
-            // helpToolStripMenuItem
+            // lblStatus
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generalHelpToolStripMenuItem,
-            this.aboutTrinityCoreDBGUIToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.checkForUpdatesToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(29, 17);
+            this.lblStatus.Text = "Idle.";
             // 
-            // generalHelpToolStripMenuItem
+            // nPCsToolStripMenuItem
             // 
-            this.generalHelpToolStripMenuItem.Name = "generalHelpToolStripMenuItem";
-            this.generalHelpToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.generalHelpToolStripMenuItem.Text = "General Help";
+            this.nPCsToolStripMenuItem.Name = "nPCsToolStripMenuItem";
+            this.nPCsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nPCsToolStripMenuItem.Text = "NPCs";
+            this.nPCsToolStripMenuItem.Click += new System.EventHandler(this.nPCsToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // questsToolStripMenuItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 6);
-            // 
-            // aboutTrinityCoreDBGUIToolStripMenuItem
-            // 
-            this.aboutTrinityCoreDBGUIToolStripMenuItem.Name = "aboutTrinityCoreDBGUIToolStripMenuItem";
-            this.aboutTrinityCoreDBGUIToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.aboutTrinityCoreDBGUIToolStripMenuItem.Text = "About ";
-            // 
-            // checkForUpdatesToolStripMenuItem
-            // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            this.questsToolStripMenuItem.Name = "questsToolStripMenuItem";
+            this.questsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.questsToolStripMenuItem.Text = "Quests";
+            this.questsToolStripMenuItem.Click += new System.EventHandler(this.questsToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -214,6 +250,10 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTrinityCoreDBGUIToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.ToolStripMenuItem databaseReferencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nPCsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem questsToolStripMenuItem;
     }
 }
 
