@@ -43,6 +43,7 @@
             this.lvDbRefs.Location = new System.Drawing.Point(5, 5);
             this.lvDbRefs.Name = "lvDbRefs";
             this.lvDbRefs.Size = new System.Drawing.Size(288, 402);
+            this.lvDbRefs.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvDbRefs.TabIndex = 0;
             this.lvDbRefs.UseCompatibleStateImageBehavior = false;
             this.lvDbRefs.View = System.Windows.Forms.View.Details;

@@ -76,6 +76,16 @@ namespace TrinityCore_DBGUI
                 tBox.Text = "";
                 tBox.Font = new Font(tBox.Font, FontStyle.Regular);
                 tBox.ForeColor = Color.Black;
+
+                /* check if password field */
+                if (tBox.Tag != null)
+                {
+                    if ((String)tBox.Tag == "password.field")
+                    {
+                        tBox.PasswordChar = '*';
+                    }
+                }
+
             }
 
         }
@@ -89,6 +99,16 @@ namespace TrinityCore_DBGUI
                 tBox.Text = defaultText;
                 tBox.Font = new Font(tBox.Font, FontStyle.Italic);
                 tBox.ForeColor = Color.Silver;
+
+                /* check if password field */
+                if (tBox.Tag != null)
+                {
+                    if ((String)tBox.Tag == "password.field")
+                    {
+                        tBox.PasswordChar = (char)0;
+                    }
+                }
+
             }
 
             this.PopulateCombos();
@@ -222,6 +242,18 @@ namespace TrinityCore_DBGUI
                         fMain.trinityCoreController.DatabaseUsername = cfgLine[1];
                     }
 
+                    if (cfgLine[0] == "db.pwd")
+                    {
+                        this.txtDatabasePassword_Enter(this.txtDatabasePassword, new EventArgs());
+                        this.txtDatabasePassword.Text = cfgLine[1];
+                        fMain.trinityCoreController.DatabasePassword = cfgLine[1];
+                    }
+
+                    if (cfgLine[0] == "remember.password")
+                    {
+                        this.chkRememberMyPassword.Checked = bool.Parse(cfgLine[1]);
+                    }
+
                     if (cfgLine[0] == "db.found")
                     {
                         this.cboAuthDB.Items.Add(cfgLine[1]);
@@ -263,6 +295,16 @@ namespace TrinityCore_DBGUI
             tw.WriteLine("db.hostname:" + this.txtDatabaseHostname.Text);
             tw.WriteLine("db.port:" + this.txtDatabasePort.Text);
             tw.WriteLine("db.user:" + this.txtDatabaseUsername.Text);
+
+            if (this.chkRememberMyPassword.Checked == true)
+            {
+                tw.WriteLine("db.pwd:" + this.txtDatabasePassword.Text);
+                tw.WriteLine("remember.password:true");
+            }
+            else
+            {
+                tw.WriteLine("remember.password:false");
+            }
 
             foreach (String dbName in this.cboAuthDB.Items)
             {

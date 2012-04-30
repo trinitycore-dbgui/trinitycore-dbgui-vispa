@@ -1,0 +1,4 @@
+script.list.begin
+script.add:gui.cfg:1.0.0
+script.add:dbrefs.cfg:1.0.0
+script.add:search_gameitem.cfg:1.0.0

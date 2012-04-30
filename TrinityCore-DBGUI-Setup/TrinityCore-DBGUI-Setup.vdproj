@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_25045954C61B4DA18ECB08F70AF76095"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4CD09CF6EC93B04AFD62D3F8108AD3B1"
         "OwnerKey" = "8:_DA45981CE00F4813A11FD9A859130840"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +47,24 @@
         {
         "MsmKey" = "8:_AFF3F4E9508C562C9915068B0AB92AFF"
         "OwnerKey" = "8:_DA45981CE00F4813A11FD9A859130840"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AFF3F4E9508C562C9915068B0AB92AFF"
+        "OwnerKey" = "8:_AA881FA3915EED6BFCA105BA4795AD8A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B6EDCD58F8654452AF785EB7E612FCAE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BC6C06D44F00417FAE94770F4DAC6F0B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -178,6 +202,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_25045954C61B4DA18ECB08F70AF76095"
+            {
+            "SourcePath" = "8:..\\TrinityCore-DBGUI\\bin\\Debug\\conf\\search_gameitem.cfg"
+            "TargetName" = "8:search_gameitem.cfg"
+            "Tag" = "8:"
+            "Folder" = "8:_B1E8B15A6C3946AFA8DEF37D1AA0F8E3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4CD09CF6EC93B04AFD62D3F8108AD3B1"
             {
             "AssemblyRegister" = "3:1"
@@ -291,6 +335,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B6EDCD58F8654452AF785EB7E612FCAE"
+            {
+            "SourcePath" = "8:..\\TrinityCore-DBGUI\\bin\\Debug\\conf\\gui.cfg"
+            "TargetName" = "8:gui.cfg"
+            "Tag" = "8:"
+            "Folder" = "8:_B1E8B15A6C3946AFA8DEF37D1AA0F8E3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC6C06D44F00417FAE94770F4DAC6F0B"
+            {
+            "SourcePath" = "8:..\\TrinityCore-DBGUI\\bin\\Debug\\conf\\dbrefs.cfg"
+            "TargetName" = "8:dbrefs.cfg"
+            "Tag" = "8:"
+            "Folder" = "8:_B1E8B15A6C3946AFA8DEF37D1AA0F8E3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -307,6 +391,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B1E8B15A6C3946AFA8DEF37D1AA0F8E3"
+                    {
+                    "Name" = "8:conf"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A1C8F8710FD84918A5605EE0518FA263"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_300041379C454FB098D8D65A27AAE4A6"
@@ -358,9 +453,9 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TrinityCore-DBGUI"
-        "ProductCode" = "8:{BB1140BD-587D-40EC-AA02-C2C9EC745990}"
-        "PackageCode" = "8:{9B384173-730A-4D2B-8C6B-859D84A297E9}"
-        "UpgradeCode" = "8:{6B86DC61-BF0F-47D4-AB39-5F2A015BF6F1}"
+        "ProductCode" = "8:{39B413C7-F43C-481F-A821-FE5BB9B06921}"
+        "PackageCode" = "8:{3B2BE8C0-1971-4E7F-BA52-D0C6B0345C37}"
+        "UpgradeCode" = "8:{D90A6380-7EF9-41E7-B85D-A32B3706CCB3}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

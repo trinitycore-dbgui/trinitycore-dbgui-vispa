@@ -1,0 +1,5 @@
+gui.config.begin
+search.add^Game Items^conf\search_gameitem.cfg
+search.add^NPCs^conf\search_npcs.cfg
+search.add^Quests^conf\search_quests.cfg
+gui.config.end

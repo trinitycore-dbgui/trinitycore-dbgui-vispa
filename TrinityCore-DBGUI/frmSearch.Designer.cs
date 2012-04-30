@@ -32,6 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLimitBy = new System.Windows.Forms.TextBox();
+            this.ucSearchCriteriaSet1 = new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaSet();
+            this.ucSearchCriteriaInput1 = new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaInput();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tViewType = new System.Windows.Forms.TreeView();
             this.viewOnWowHeadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +48,6 @@
             this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteItemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblResults = new System.Windows.Forms.Label();
-            this.ucSearchCriteriaSet1 = new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaSet();
-            this.ucSearchCriteriaInput1 = new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaInput();
             this.groupBox1.SuspendLayout();
             this.cMenuRightClickResult.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,23 @@
             this.txtLimitBy.TabIndex = 5;
             this.txtLimitBy.Text = "500";
             this.txtLimitBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ucSearchCriteriaSet1
+            // 
+            this.ucSearchCriteriaSet1.BackColor = System.Drawing.Color.Lavender;
+            this.ucSearchCriteriaSet1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucSearchCriteriaSet1.Location = new System.Drawing.Point(6, 46);
+            this.ucSearchCriteriaSet1.Name = "ucSearchCriteriaSet1";
+            this.ucSearchCriteriaSet1.Size = new System.Drawing.Size(657, 105);
+            this.ucSearchCriteriaSet1.TabIndex = 4;
+            // 
+            // ucSearchCriteriaInput1
+            // 
+            this.ucSearchCriteriaInput1.Location = new System.Drawing.Point(6, 17);
+            this.ucSearchCriteriaInput1.Name = "ucSearchCriteriaInput1";
+            this.ucSearchCriteriaInput1.Size = new System.Drawing.Size(599, 23);
+            this.ucSearchCriteriaInput1.TabIndex = 3;
+            this.ucSearchCriteriaInput1.RequestedAddCriteria += new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaInput.AddCriteria(this.ucSearchCriteriaInput1_RequestedAddCriteria);
             // 
             // btnSearch
             // 
@@ -147,6 +164,7 @@
             // lstItemSearchResults
             // 
             this.lstItemSearchResults.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lstItemSearchResults.BackColor = System.Drawing.Color.White;
             this.lstItemSearchResults.ContextMenuStrip = this.cMenuRightClickResult;
             this.lstItemSearchResults.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstItemSearchResults.FullRowSelect = true;
@@ -201,23 +219,6 @@
             this.lblResults.TabIndex = 10;
             this.lblResults.Text = "0 Results";
             this.lblResults.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ucSearchCriteriaSet1
-            // 
-            this.ucSearchCriteriaSet1.BackColor = System.Drawing.Color.Lavender;
-            this.ucSearchCriteriaSet1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucSearchCriteriaSet1.Location = new System.Drawing.Point(6, 46);
-            this.ucSearchCriteriaSet1.Name = "ucSearchCriteriaSet1";
-            this.ucSearchCriteriaSet1.Size = new System.Drawing.Size(657, 105);
-            this.ucSearchCriteriaSet1.TabIndex = 4;
-            // 
-            // ucSearchCriteriaInput1
-            // 
-            this.ucSearchCriteriaInput1.Location = new System.Drawing.Point(6, 17);
-            this.ucSearchCriteriaInput1.Name = "ucSearchCriteriaInput1";
-            this.ucSearchCriteriaInput1.Size = new System.Drawing.Size(599, 23);
-            this.ucSearchCriteriaInput1.TabIndex = 3;
-            this.ucSearchCriteriaInput1.RequestedAddCriteria += new TrinityCore_DBGUI_ControlLib.ucSearchCriteriaInput.AddCriteria(this.ucSearchCriteriaInput1_RequestedAddCriteria);
             // 
             // frmSearch
             // 

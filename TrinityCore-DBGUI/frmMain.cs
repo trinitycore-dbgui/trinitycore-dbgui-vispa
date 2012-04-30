@@ -24,6 +24,10 @@ namespace TrinityCore_DBGUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+
+            /* Load GUI Configuration */
+            this.LoadGUIConfig();
+
             /* Display version number in application window title */
             Version CurVer = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             this.Text = "TrinityCore-DBGUI [Build " + CurVer.Major + "." + CurVer.Minor + "." + CurVer.Revision + "]";
@@ -36,6 +40,30 @@ namespace TrinityCore_DBGUI
             this.lblStatus.Text = "Idle.";
 
             this.IsDisconnected();
+        }
+
+        private void RequestSearch(object sender, EventArgs e)
+        {
+            ToolStripMenuItem srchCfgItem = (ToolStripMenuItem)sender;
+
+            String srchConfig = (String)srchCfgItem.Tag;
+
+            if (srchConfig == null)
+                return;
+
+            frmSearch fSearch = new frmSearch();
+            fSearch.MdiParent = this;
+            fSearch.ConfigureSearch(srchConfig);
+
+            try
+            {
+                fSearch.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
 
         private void LoadGUIConfig()
@@ -62,9 +90,10 @@ namespace TrinityCore_DBGUI
                     //search.add^Game Items^conf\search_gameitem.cfg
                     if (cfgLine[0] == "search.add")
                     {
-                        MenuItem mItem = new MenuItem(cfgLine[1]);
-
+                        ToolStripMenuItem mItem = new ToolStripMenuItem(cfgLine[1]);
                         mItem.Tag = cfgLine[2];
+                        mItem.Click += new EventHandler(RequestSearch);
+                        this.mnuSearch.DropDownItems.Add(mItem);
                     }
 
                 }
@@ -169,6 +198,23 @@ namespace TrinityCore_DBGUI
                 fSearch.Show();
             }
             catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void updateAllScriptsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUpdateScripts fUpdScripts = new frmUpdateScripts();
+
+            fUpdScripts.MdiParent = this;
+            fUpdScripts.PopulateUpdateList();
+
+            try
+            {
+                fUpdScripts.Show();
+            }
+            catch(Exception ex)
             {
 
             }

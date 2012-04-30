@@ -48,6 +48,7 @@
             this.txtDatabaseUsername = new System.Windows.Forms.TextBox();
             this.txtDatabasePort = new System.Windows.Forms.TextBox();
             this.txtDatabaseHostname = new System.Windows.Forms.TextBox();
+            this.chkRememberMyPassword = new System.Windows.Forms.CheckBox();
             this.tabConnectionInformation.SuspendLayout();
             this.tabServerInformation.SuspendLayout();
             this.grpDatabaseInfo.SuspendLayout();
@@ -56,7 +57,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(119, 271);
+            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(192, 276);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
@@ -66,11 +68,12 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(200, 271);
+            this.btnConnect.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Location = new System.Drawing.Point(111, 276);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 1;
-            this.btnConnect.Text = "Connect";
+            this.btnConnect.Text = "&Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -80,7 +83,7 @@
             this.tabConnectionInformation.Location = new System.Drawing.Point(12, 12);
             this.tabConnectionInformation.Name = "tabConnectionInformation";
             this.tabConnectionInformation.SelectedIndex = 0;
-            this.tabConnectionInformation.Size = new System.Drawing.Size(267, 253);
+            this.tabConnectionInformation.Size = new System.Drawing.Size(267, 258);
             this.tabConnectionInformation.TabIndex = 4;
             // 
             // tabServerInformation
@@ -91,7 +94,7 @@
             this.tabServerInformation.Location = new System.Drawing.Point(4, 22);
             this.tabServerInformation.Name = "tabServerInformation";
             this.tabServerInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServerInformation.Size = new System.Drawing.Size(259, 227);
+            this.tabServerInformation.Size = new System.Drawing.Size(259, 232);
             this.tabServerInformation.TabIndex = 0;
             this.tabServerInformation.Text = "Connection Information";
             this.tabServerInformation.UseVisualStyleBackColor = true;
@@ -107,7 +110,7 @@
             this.grpDatabaseInfo.Controls.Add(this.label3);
             this.grpDatabaseInfo.Controls.Add(this.label2);
             this.grpDatabaseInfo.Controls.Add(this.label1);
-            this.grpDatabaseInfo.Location = new System.Drawing.Point(6, 110);
+            this.grpDatabaseInfo.Location = new System.Drawing.Point(6, 123);
             this.grpDatabaseInfo.Name = "grpDatabaseInfo";
             this.grpDatabaseInfo.Size = new System.Drawing.Size(245, 104);
             this.grpDatabaseInfo.TabIndex = 5;
@@ -207,13 +210,14 @@
             // 
             // grpServerInfo
             // 
+            this.grpServerInfo.Controls.Add(this.chkRememberMyPassword);
             this.grpServerInfo.Controls.Add(this.txtDatabasePassword);
             this.grpServerInfo.Controls.Add(this.txtDatabaseUsername);
             this.grpServerInfo.Controls.Add(this.txtDatabasePort);
             this.grpServerInfo.Controls.Add(this.txtDatabaseHostname);
             this.grpServerInfo.Location = new System.Drawing.Point(6, 6);
             this.grpServerInfo.Name = "grpServerInfo";
-            this.grpServerInfo.Size = new System.Drawing.Size(245, 98);
+            this.grpServerInfo.Size = new System.Drawing.Size(245, 111);
             this.grpServerInfo.TabIndex = 3;
             this.grpServerInfo.TabStop = false;
             this.grpServerInfo.Text = "Server Information";
@@ -226,6 +230,7 @@
             this.txtDatabasePassword.Name = "txtDatabasePassword";
             this.txtDatabasePassword.Size = new System.Drawing.Size(220, 21);
             this.txtDatabasePassword.TabIndex = 3;
+            this.txtDatabasePassword.Tag = "password.field";
             this.txtDatabasePassword.Text = "database password";
             this.txtDatabasePassword.Enter += new System.EventHandler(this.txtDatabasePassword_Enter);
             this.txtDatabasePassword.Leave += new System.EventHandler(this.txtDatabasePassword_Leave);
@@ -266,11 +271,22 @@
             this.txtDatabaseHostname.Enter += new System.EventHandler(this.txtDatabaseHostname_Enter);
             this.txtDatabaseHostname.Leave += new System.EventHandler(this.txtDatabaseHostname_Leave);
             // 
+            // chkRememberMyPassword
+            // 
+            this.chkRememberMyPassword.AutoSize = true;
+            this.chkRememberMyPassword.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberMyPassword.Location = new System.Drawing.Point(51, 88);
+            this.chkRememberMyPassword.Name = "chkRememberMyPassword";
+            this.chkRememberMyPassword.Size = new System.Drawing.Size(143, 17);
+            this.chkRememberMyPassword.TabIndex = 4;
+            this.chkRememberMyPassword.Text = "Remember my password";
+            this.chkRememberMyPassword.UseVisualStyleBackColor = true;
+            // 
             // frmConnect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 301);
+            this.ClientSize = new System.Drawing.Size(287, 304);
             this.ControlBox = false;
             this.Controls.Add(this.tabConnectionInformation);
             this.Controls.Add(this.btnConnect);
@@ -311,5 +327,6 @@
         private System.Windows.Forms.Button btnRefresh3;
         private System.Windows.Forms.Button btnRefresh2;
         private System.Windows.Forms.Button btnRefresh1;
+        private System.Windows.Forms.CheckBox chkRememberMyPassword;
     }
 }

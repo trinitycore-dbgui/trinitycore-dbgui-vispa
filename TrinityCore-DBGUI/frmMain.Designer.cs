@@ -33,7 +33,6 @@
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSearch = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseReferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +46,7 @@
             this.lblWorldDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCharacterDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.nPCsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.questsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateAllScriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,20 +82,9 @@
             // 
             // mnuSearch
             // 
-            this.mnuSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameItemsToolStripMenuItem,
-            this.nPCsToolStripMenuItem,
-            this.questsToolStripMenuItem});
             this.mnuSearch.Name = "mnuSearch";
             this.mnuSearch.Size = new System.Drawing.Size(54, 20);
             this.mnuSearch.Text = "Search";
-            // 
-            // gameItemsToolStripMenuItem
-            // 
-            this.gameItemsToolStripMenuItem.Name = "gameItemsToolStripMenuItem";
-            this.gameItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gameItemsToolStripMenuItem.Text = "Game Items";
-            this.gameItemsToolStripMenuItem.Click += new System.EventHandler(this.gameItemsToolStripMenuItem_Click);
             // 
             // mnuEdit
             // 
@@ -126,7 +113,8 @@
             this.generalHelpToolStripMenuItem,
             this.aboutTrinityCoreDBGUIToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.checkForUpdatesToolStripMenuItem});
+            this.checkForUpdatesToolStripMenuItem,
+            this.updateAllScriptsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -194,19 +182,12 @@
             this.lblStatus.Size = new System.Drawing.Size(29, 17);
             this.lblStatus.Text = "Idle.";
             // 
-            // nPCsToolStripMenuItem
+            // updateAllScriptsToolStripMenuItem
             // 
-            this.nPCsToolStripMenuItem.Name = "nPCsToolStripMenuItem";
-            this.nPCsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nPCsToolStripMenuItem.Text = "NPCs";
-            this.nPCsToolStripMenuItem.Click += new System.EventHandler(this.nPCsToolStripMenuItem_Click);
-            // 
-            // questsToolStripMenuItem
-            // 
-            this.questsToolStripMenuItem.Name = "questsToolStripMenuItem";
-            this.questsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.questsToolStripMenuItem.Text = "Quests";
-            this.questsToolStripMenuItem.Click += new System.EventHandler(this.questsToolStripMenuItem_Click);
+            this.updateAllScriptsToolStripMenuItem.Name = "updateAllScriptsToolStripMenuItem";
+            this.updateAllScriptsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.updateAllScriptsToolStripMenuItem.Text = "Update All Scripts";
+            this.updateAllScriptsToolStripMenuItem.Click += new System.EventHandler(this.updateAllScriptsToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -240,7 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuWindow;
         private System.Windows.Forms.ToolStripMenuItem connectToServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuSearch;
-        private System.Windows.Forms.ToolStripMenuItem gameItemsToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblAuthDB;
         private System.Windows.Forms.ToolStripStatusLabel lblWorldDB;
@@ -252,8 +232,7 @@
         private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripMenuItem databaseReferencesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nPCsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem questsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateAllScriptsToolStripMenuItem;
     }
 }
 
