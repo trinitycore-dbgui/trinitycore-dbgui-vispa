@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCheckForUpdates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="frmdbRefs.Designer.cs">
       <DependentUpon>frmdbRefs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit.Designer.cs">
+      <DependentUpon>frmEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGameItem.cs">
       <SubType>Form</SubType>
@@ -111,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCheckForUpdates.resx">
       <DependentUpon>frmCheckForUpdates.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdbRefs.resx">
       <DependentUpon>frmdbRefs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit.resx">
+      <DependentUpon>frmEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGameItem.resx">
       <DependentUpon>frmGameItem.cs</DependentUpon>

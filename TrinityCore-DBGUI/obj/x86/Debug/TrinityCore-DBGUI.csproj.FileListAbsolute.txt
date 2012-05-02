@@ -18,3 +18,5 @@ C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\Trinity
 C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore-DBGUI.exe
 C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore-DBGUI.pdb
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmAbout.resources
+C:\Users\Anthony\documents\visual studio 2010\Projects\TrinityCore-DBGUI\TrinityCore-DBGUI\obj\x86\Debug\TrinityCore_DBGUI.frmEdit.resources

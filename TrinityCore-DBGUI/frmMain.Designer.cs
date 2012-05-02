@@ -41,12 +41,14 @@
             this.aboutTrinityCoreDBGUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateAllScriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAuthDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblWorldDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCharacterDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.updateAllScriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.debugEditFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +91,9 @@
             // mnuEdit
             // 
             this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.databaseReferencesToolStripMenuItem});
+            this.databaseReferencesToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.debugEditFormToolStripMenuItem});
             this.mnuEdit.Name = "mnuEdit";
             this.mnuEdit.Size = new System.Drawing.Size(39, 20);
             this.mnuEdit.Text = "Edit";
@@ -130,6 +134,7 @@
             this.aboutTrinityCoreDBGUIToolStripMenuItem.Name = "aboutTrinityCoreDBGUIToolStripMenuItem";
             this.aboutTrinityCoreDBGUIToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.aboutTrinityCoreDBGUIToolStripMenuItem.Text = "About ";
+            this.aboutTrinityCoreDBGUIToolStripMenuItem.Click += new System.EventHandler(this.aboutTrinityCoreDBGUIToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -142,6 +147,13 @@
             this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            // 
+            // updateAllScriptsToolStripMenuItem
+            // 
+            this.updateAllScriptsToolStripMenuItem.Name = "updateAllScriptsToolStripMenuItem";
+            this.updateAllScriptsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.updateAllScriptsToolStripMenuItem.Text = "Update All Scripts";
+            this.updateAllScriptsToolStripMenuItem.Click += new System.EventHandler(this.updateAllScriptsToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -182,12 +194,17 @@
             this.lblStatus.Size = new System.Drawing.Size(29, 17);
             this.lblStatus.Text = "Idle.";
             // 
-            // updateAllScriptsToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.updateAllScriptsToolStripMenuItem.Name = "updateAllScriptsToolStripMenuItem";
-            this.updateAllScriptsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.updateAllScriptsToolStripMenuItem.Text = "Update All Scripts";
-            this.updateAllScriptsToolStripMenuItem.Click += new System.EventHandler(this.updateAllScriptsToolStripMenuItem_Click);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(179, 6);
+            // 
+            // debugEditFormToolStripMenuItem
+            // 
+            this.debugEditFormToolStripMenuItem.Name = "debugEditFormToolStripMenuItem";
+            this.debugEditFormToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.debugEditFormToolStripMenuItem.Text = "Debug Edit Form";
+            this.debugEditFormToolStripMenuItem.Click += new System.EventHandler(this.debugEditFormToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -233,6 +250,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripMenuItem databaseReferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateAllScriptsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem debugEditFormToolStripMenuItem;
     }
 }
 

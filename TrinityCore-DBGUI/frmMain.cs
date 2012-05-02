@@ -219,5 +219,24 @@ namespace TrinityCore_DBGUI
 
             }
         }
+
+        private void aboutTrinityCoreDBGUIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmAbout fAbout = new frmAbout();
+
+            fAbout.MdiParent = this;
+            fAbout.Show();
+
+        }
+
+        private void debugEditFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEdit fEdit = new frmEdit();
+            fEdit.MdiParent = this;
+
+            fEdit.ConfigureEditor(@"conf\editor_test.cfg");
+            fEdit.Show();
+        }
     }
 }

@@ -201,6 +201,22 @@ namespace TrinityCore_DBGUI
 
         }
 
+
+        private void viewOnWowHeadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
+
+            if (this.lstItemSearchResults.SelectedItems.Count < 1)
+                return;
+
+            foreach (ListViewItem lvi in this.lstItemSearchResults.SelectedItems)
+            {
+                System.Diagnostics.Process.Start("http://www.wowhead.com/item=" + lvi.Text);
+            }
+        }
+
+
+
    }
 
 }

@@ -127,6 +127,7 @@
             this.viewOnWowHeadToolStripMenuItem.Name = "viewOnWowHeadToolStripMenuItem";
             this.viewOnWowHeadToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.viewOnWowHeadToolStripMenuItem.Text = "View on WowHead ...";
+            this.viewOnWowHeadToolStripMenuItem.Click += new System.EventHandler(this.viewOnWowHeadToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -190,7 +191,7 @@
             this.toolStripMenuItem1,
             this.viewOnWowHeadToolStripMenuItem});
             this.cMenuRightClickResult.Name = "contextMenuStrip1";
-            this.cMenuRightClickResult.Size = new System.Drawing.Size(187, 126);
+            this.cMenuRightClickResult.Size = new System.Drawing.Size(187, 148);
             // 
             // editItemToolStripMenuItem
             // 
